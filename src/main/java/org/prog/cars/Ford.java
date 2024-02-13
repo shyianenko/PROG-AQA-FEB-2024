@@ -17,6 +17,11 @@ public class Ford implements ICar {
     }
 
     @Override
+    public void sound() {
+        System.out.println("Beep-Beep");
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (obj instanceof Ford) {
             Ford otherCar = (Ford) obj;

@@ -5,7 +5,10 @@ public class Tesla implements ICar {
     public void goTo() {
         System.out.println("Tesla uses electricity");
     }
-
+    @Override
+    public void sound() {
+        System.out.println("Buum-Buum");
+    }
     @Override
     public void fillCar() {
         System.out.println("Tesla is charging...");

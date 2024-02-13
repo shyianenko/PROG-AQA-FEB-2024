@@ -11,5 +11,13 @@ public class Main {
         truck.turn();
         cargoTruck.turn();
         lorry.turn();
+
+        Tesla tesla = new Tesla();
+        Honda honda = new Honda();
+        Ford ford = new Ford();
+
+        tesla.sound();
+        honda.sound();
+        ford.sound();
     }
 }
