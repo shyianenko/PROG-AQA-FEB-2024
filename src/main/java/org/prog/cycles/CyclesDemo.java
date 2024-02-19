@@ -12,26 +12,27 @@ public class CyclesDemo {
             System.out.println("never works");
         }
 
-        for (int i = 10; i >= 0; i--) {
-            System.out.println(i);
-            if (i == 3) {
-                break;
-            }
-        }
-        int j = -10;
-        while (j > 0) {
-            System.out.println(j);
-            j--;
-        }
-
-        int k = -10;
-        do {
-            System.out.println(k);
-            k--;
-        } while (k >= 0);
+//        for (int i = 10; i >= 0; i--) {
+//            System.out.println(i);
+//            if (i == 7) {
+//                break;
+//            }
+//        }
+//        int j = -10;
+//        while (j > 0) {
+//            System.out.println(j);
+//            j--;
+//        }
+//
+//        int k = -10;
+//        do {
+//            System.out.println(k);
+//            k--;
+//        } while (k >= 0);
 
         test("CHROME");
         test("Avant");
+        test("IE");
     }
 
     //TODO: switch practice
