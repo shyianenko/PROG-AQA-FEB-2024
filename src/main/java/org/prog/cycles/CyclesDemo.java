@@ -1,5 +1,7 @@
 package org.prog.cycles;
 
+import java.util.Scanner;
+
 public class CyclesDemo {
 
     public static void main(String[] args) {
@@ -12,27 +14,40 @@ public class CyclesDemo {
             System.out.println("never works");
         }
 
-//        for (int i = 10; i >= 0; i--) {
-//            System.out.println(i);
-//            if (i == 7) {
-//                break;
-//            }
-//        }
-//        int j = -10;
-//        while (j > 0) {
-//            System.out.println(j);
-//            j--;
-//        }
-//
-//        int k = -10;
-//        do {
-//            System.out.println(k);
-//            k--;
-//        } while (k >= 0);
-
         test("CHROME");
         test("Avant");
         test("IE");
+
+        Scanner sc = new Scanner(System.in);
+        int day;
+        System.out.println("Input day");
+        day = sc.nextInt();
+
+        switch (day) {
+            case 1:
+                System.out.println("Понедельник");
+                break;
+            case 2:
+                System.out.println("Вторник");
+                break;
+            case 3:
+                System.out.println("Среда");
+                break;
+            case 4:
+                System.out.println("Четверг");
+                break;
+            case 5:
+                System.out.println("Пятница");
+                break;
+            case 6:
+                System.out.println("Суббота");
+                break;
+            case 7:
+                System.out.println("Воскресенье");
+                break;
+            default:
+                System.out.println("Input error");
+        }
     }
 
     //TODO: switch practice
