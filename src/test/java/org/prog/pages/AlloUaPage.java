@@ -31,7 +31,7 @@ public class AlloUaPage {
     }
 
     public void waitUntilPageLoaded() {
-        new WebDriverWait(driver, Duration.ofSeconds(30L)).until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("div.product-card"), 1));
+        new WebDriverWait(driver, Duration.ofSeconds(30L)).until(ExpectedConditions.invisibilityOfElementLocated(By.className("loading-block-gif")));
     }
 
     public boolean searchResultsContain(String value) {
@@ -62,7 +62,8 @@ public class AlloUaPage {
 
         WebElement nextPage = currentPage.findElement(By.xpath("//li[@class='pagination__item current']/following-sibling::li[1]"));
         nextPage.click();
-        Thread.sleep(6000);
+        waitUntilPageLoaded();
+        //Thread.sleep(6000);
         scrollToElement(pagination());
 
         int currentPageNumber = Integer.parseInt(driver.findElement(By.xpath("//li[@class='pagination__item current']")).getText().trim());
@@ -76,8 +77,8 @@ public class AlloUaPage {
 
         WebElement nextPage = currentPage.findElement(By.xpath("//li[@class='pagination__item current']/preceding-sibling::li[1]"));
         nextPage.click();
-        Thread.sleep(6000);
-        //waitUntilPageLoaded();
+        waitUntilPageLoaded();
+        //Thread.sleep(6000);
         scrollToElement(pagination());
 
         int currentPageNumber = Integer.parseInt(driver.findElement(By.xpath("//li[@class='pagination__item current']")).getText().trim());
@@ -92,8 +93,8 @@ public class AlloUaPage {
         if (nextArrow.isDisplayed()) {
             scrollToElement(nextArrow);
             nextArrow.click();
-            //waitUntilPageLoaded();
-            Thread.sleep(6000);
+            waitUntilPageLoaded();
+            //Thread.sleep(6000);
             scrollToElement(pagination());
 
             int currentPageNumber = Integer.parseInt(driver.findElement(By.xpath("//li[@class='pagination__item current']")).getText().trim());
@@ -109,8 +110,8 @@ public class AlloUaPage {
         if (backArrow.isDisplayed()) {
             scrollToElement(backArrow);
             backArrow.click();
-            //waitUntilPageLoaded();
-            Thread.sleep(6000);
+            waitUntilPageLoaded();
+            //Thread.sleep(6000);
             scrollToElement(pagination());
 
             int currentPageNumber = Integer.parseInt(driver.findElement(By.xpath("//li[@class='pagination__item current']")).getText().trim());
