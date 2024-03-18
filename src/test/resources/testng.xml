@@ -6,7 +6,7 @@
     <test name="google1">
         <classes>
             <!--@BeforeClass-->
-            <class name="org.prog.testng.AlloUaTest"/><!--@BeforeMethod-->
+            <class name="org.prog.cucumber.CucumberRunner"/><!--@BeforeMethod-->
         </classes>
     </test>
 </suite>
