@@ -2,9 +2,9 @@ package org.prog.cucumber;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.prog.cucumber.steps.CucumberGoogleSteps;
 import org.prog.util.DataHolder;
+import org.prog.web.WebDriverFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -21,7 +21,7 @@ public class CucumberRunner extends AbstractTestNGCucumberTests {
 
     @BeforeSuite
     public void init() {
-        CucumberGoogleSteps.driver = new ChromeDriver();
+        CucumberGoogleSteps.driver = WebDriverFactory.getDriver();
     }
 
     @BeforeMethod

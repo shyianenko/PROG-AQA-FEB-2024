@@ -17,9 +17,7 @@ public class RestSteps {
                 .basePath("api/")
                 .get()
                 .as(ResultsDto.class);
-
-        NameDto name = dto.getResults().get(0).getName();
-        DataHolder.getInstance().put(alias, name.getFirst() + " " + name.getLast());
-        System.out.println("Stored user : " + DataHolder.getInstance().get(alias));
+        
+        DataHolder.getInstance().put(alias, dto.getResults().get(0));
     }
 }

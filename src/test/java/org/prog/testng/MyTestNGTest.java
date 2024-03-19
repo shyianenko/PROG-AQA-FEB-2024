@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 
 public class MyTestNGTest extends ParentTest {
 
-    @Test(dataProvider = "celebrityNames")
-    public void myGoogleSearchForBen(String name) {
-        System.out.println("I locate search bar and enter " + name);
-        System.out.println("I perform search");
-        System.out.println("I validate there are at least 3 headers in search results");
+    @Test
+    public void myGoogleSearchForBen() {
+        String s = "%s : %s";
+        System.out.println(String.format(s, "value", "abc"));
+        System.out.println(String.format(s, "value", 2));
     }
 
     @Test(dataProvider = "celebrityNamesWithUrls")
