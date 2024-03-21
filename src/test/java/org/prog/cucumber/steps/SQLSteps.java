@@ -65,7 +65,16 @@ public class SQLSteps {
         //WARN: SQL connections wont work without this!
         Class.forName("com.mysql.cj.jdbc.Driver");
         connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/db", "user", "password");
+                getSqlHost(), "user", "password");
         statement = connection.createStatement();
+    }
+
+    private String getSqlHost() {
+        String isJenkins = System.getProperty("jenkins.container", "false");
+        if (isJenkins.equals("false")) {
+            return "jdbc:mysql://localhost:3306/db";
+        } else {
+            return "jdbc:mysql://mysql-db-1:3306/db";
+        }
     }
 }
