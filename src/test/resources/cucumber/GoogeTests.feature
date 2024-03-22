@@ -16,3 +16,17 @@ Feature: Google search tests
     Given I accept cookies if present
     When I google for "random_user"
     Then I can see at least 3 search results for "random_user"
+
+#  Scenario: AlloUA Cucumber Scenario
+#    Given I load AlloUa page
+#    Given I search for iPhone 15
+#    Then I can see results
+#
+#  Scenario: AlloUA Cucumber Scenario with pagination
+#    Given I load AlloUa page
+#    Given I search for iPhone 15
+#    Given I can see results
+#    Given I scroll to pagination
+#    Given I switchToNextPage
+#    Given I switchToSearchPageByNumber
+#    Given I switchToPrevPage

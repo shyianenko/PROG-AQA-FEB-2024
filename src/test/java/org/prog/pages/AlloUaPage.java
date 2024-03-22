@@ -1,5 +1,7 @@
 package org.prog.pages;
 
+//import io.cucumber.java.en.Given;
+//import io.cucumber.java.en.Then;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,10 +24,12 @@ public class AlloUaPage {
         this.driver = driver;
     }
 
+//    @Given("I load AlloUa page")
     public void loadPage() {
         driver.get("https://allo.ua/");
     }
 
+//    @Given("I search for iPhone 15")
     public void searchForGoods(String searchValue) {
         WebElement searchInput = driver.findElement(By.name("search"));
         searchInput.sendKeys(searchValue);
@@ -40,6 +44,7 @@ public class AlloUaPage {
                 );
     }
 
+//    @Then("I can see results")
     public boolean searchResultsContain(String value) {
         List<WebElement> searchResults = getSearchResults();
         Assert.assertFalse(searchResults.isEmpty(), "Search results must not be empty!");
@@ -56,11 +61,12 @@ public class AlloUaPage {
     public WebElement pagination() {
         return driver.findElement(By.className("pagination"));
     }
-
+//    @Given("I scroll to pagination")
     public void scrollToElement(WebElement e) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", e);
     }
 
+//    @Given("I switchToSearchPageByNumber")
     public void switchToSearchPageByNumber(String number) {
         new WebDriverWait(driver, Duration.ofSeconds(20L))
                 .until(ExpectedConditions.presenceOfElementLocated(
@@ -69,14 +75,17 @@ public class AlloUaPage {
         waitForLoadingToFinish();
     }
 
+//    @Given("I switchToPrevPage")
     public void switchToPrevPage() {
         switchPrevNextPage(PAGE_PREV_XPATH);
     }
 
+//    @Given("I switchToNextPage")
     public void switchToNextPage() {
         switchPrevNextPage(PAGE_NEXT_XPATH);
     }
 
+//    @Given("I switchPrevNextPage")
     private void switchPrevNextPage(String xpath) {
         scrollToElement(pagination());
         if (isPaginationMissing(xpath)) {
